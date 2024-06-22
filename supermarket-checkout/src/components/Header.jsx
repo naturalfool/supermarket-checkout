@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div>
-      <h1>Supermarket Checkout App</h1>
-      <Link to="/">Home</Link>
+     <Link to="/"> <h1>Josh's Really Good And Cool Supermarket Checkout</h1></Link>
+
     </div>
   );
 };
