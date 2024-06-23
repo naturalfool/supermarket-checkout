@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
+    <div className='homepage-display'>
       <h2>Before you are two paths. Which will you choose?</h2>
-      <div>
+      <div className='button-container'>
         <Link to="/table-version">
-          <button>Table Version</button>
+          <button className='homepage-buttons'>Table Version</button>
         </Link>
         <Link to="/input-version">
-          <button>Text Input Version</button>
+          <button className='homepage-buttons'>Text Input Version</button>
         </Link>
       </div>
     </div>

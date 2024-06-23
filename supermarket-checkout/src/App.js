@@ -8,9 +8,10 @@ import './App.css';
 
 function App() {
   return (
+    <body>
     <Router>
-      <div>
         <Header />
+      <div className='main-container'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/table-version" element={<TableVersion />} />
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </body>
   );
  
 }

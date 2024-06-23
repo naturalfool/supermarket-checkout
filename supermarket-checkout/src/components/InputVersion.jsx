@@ -16,7 +16,7 @@ const InputVersion = () => {
     const scanItem = (item) => {
       const upperItem = item.toUpperCase();
       if (!pricingRules[upperItem]) {
-        alert(`Item ${upperItem} not found in pricing rules.`);
+        alert(`Item ${upperItem} not found.`);
         return;
       }
       const newScannedItems = { ...scannedItems, [upperItem]: (scannedItems[upperItem] || 0) + 1 };
@@ -43,11 +43,9 @@ const InputVersion = () => {
     };
   
     const handleScan = () => {
-      if (input.toLowerCase() === 'total') {
-        setFinalTotal(runningTotal);
-      } else {
+    
         scanItem(input.trim());
-      }
+      
       setInput('');
     };
   
@@ -55,11 +53,6 @@ const InputVersion = () => {
       setInput(e.target.value);
     };
   
-    const handleKeyPress = (e) => {
-      if (e.key === 'Enter') {
-        handleScan();
-      }
-    };
   
     const resetAll = () => {
       setScannedItems({});
@@ -70,16 +63,15 @@ const InputVersion = () => {
   
     return (
       <div className="container">
-        <h1>Supermarket Checkout</h1>
+        <h2>Input Version</h2>
         <input
           type="text"
           value={input}
           onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
-          placeholder="Scan item (A, B, C, D) or type 'total'"
+          placeholder="Scan item (A, B, C, D)"
         />
         <button onClick={handleScan}>Scan</button>
-        <h2>Running Total: £{(runningTotal / 100).toFixed(2)}</h2>
+        <h3>Running Total: £{(runningTotal / 100).toFixed(2)}</h3>
         <button onClick={() => setFinalTotal(runningTotal)}>Get Final Total</button>
         <h2>Final Total: £{(finalTotal / 100).toFixed(2)}</h2>
         <button onClick={resetAll} style={{ marginTop: '10px', backgroundColor: '#dc3545' }}>Reset</button>
