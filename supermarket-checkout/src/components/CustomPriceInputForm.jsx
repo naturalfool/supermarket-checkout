@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 
 function CustomPriceInputForm ({customRules, setCustomRules, setCustomPricingRules}) {
     const handleInputChange = (e, item, field) => {
@@ -46,7 +46,7 @@ return (
                 required
               />
             </label>
-            {customRules[item].specialPrice (
+            {customRules[item].specialPrice && (
               <>
                 <label>
                   Special Quantity:

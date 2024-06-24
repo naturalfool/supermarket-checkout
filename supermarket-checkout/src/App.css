@@ -34,7 +34,7 @@ body {
 }
 
 .button-container {
-  margin-top: 100px; 
+  margin-top: 10px; 
   display: flex; 
   justify-content: center; 
   gap: 20px; 
@@ -47,7 +47,7 @@ body {
 .homepage-buttons {
   background-color: #4CAF50; 
   color: rgb(0, 0, 0); 
-  padding: 20px 40px; 
+  padding: 1px; 
   font-size: 18px; 
   border: none; 
   border-radius: 8px; 
