@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className='header'>
-     <Link to="/"> <h1>Josh's Really Good And Cool Supermarket Checkout</h1></Link>
+    <Link to="/"><div className='header'>
+     <Link to="/"> <h1>Josh's Really Good Supermarket Checkout</h1></Link>
 
-    </div>
+    </div> </Link>
   );
 };
 

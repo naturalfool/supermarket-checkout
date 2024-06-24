@@ -3,8 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    
   return (
     <div className='homepage-display'>
+        <div>
+            <form>
+                
+            </form>
+        </div>
       <h2>Before you are two paths. Which will you choose?</h2>
       <div className='button-container'>
         <Link to="/table-version">

@@ -17,7 +17,7 @@ const TableVersion = () => {
   });
   const [finalTotal, setFinalTotal] = useState(0);
 
-  const scanItem = (item, increment) => {
+  const addItemToBasket = (item, increment) => {
     const newCount = itemsInBasket[item] + increment;
     if (newCount >= 0) {
       const newItemsInBasket = { ...itemsInBasket, [item]: newCount };
@@ -87,21 +87,21 @@ const TableVersion = () => {
                   ) : (
                     formatPrice(pricingRules[item].unitPrice)
                   )}
-                  <button onClick={() => scanItem(item, 1)}>
+                  <button onClick={() => addItemToBasket(item, 1)}>
                     Add to basket
                   </button>
                 </td>
                 <td>
                   <button
                     className="amount-buttons"
-                    onClick={() => scanItem(item, -1)}
+                    onClick={() => addItemToBasket(item, -1)}
                   >
                     -
                   </button>
                   {itemsInBasket[item]}
                   <button
                     className="amount-buttons"
-                    onClick={() => scanItem(item, 1)}
+                    onClick={() => addItemToBasket(item, 1)}
                   >
                     +
                   </button>

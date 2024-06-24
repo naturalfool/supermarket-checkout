@@ -7,10 +7,11 @@ import InputVersion from './components/InputVersion';
 import './App.css';
 
 function App() {
+
   return (
     <body>
     <Router>
-        <Header />
+       <Header /> 
       <div className='main-container'>
         <Routes>
           <Route path="/" element={<Home />} />

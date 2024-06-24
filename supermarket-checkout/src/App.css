@@ -102,6 +102,11 @@ body {
 .table-container{
   display: flex; 
   justify-content: center; 
+ 
+}
+
+.table-container button {
+  cursor: pointer;
 }
 
 table {
@@ -120,6 +125,8 @@ caption {
   padding: 10px;
   font-weight: bold;
 }
+
+
 
 thead,
 tfoot {

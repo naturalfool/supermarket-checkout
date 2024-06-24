@@ -14,12 +14,12 @@ const InputVersion = () => {
     const [input, setInput] = useState('');
   
     const scanItem = (item) => {
-      const upperItem = item.toUpperCase();
-      if (!pricingRules[upperItem]) {
-        alert(`Item ${upperItem} not found.`);
+      const upperCaseItem = item.toUpperCase();
+      if (!pricingRules[upperCaseItem]) {
+        alert(`Item ${upperCaseItem} not found.`);
         return;
       }
-      const newScannedItems = { ...scannedItems, [upperItem]: (scannedItems[upperItem] || 0) + 1 };
+      const newScannedItems = { ...scannedItems, [upperCaseItem]: (scannedItems[upperCaseItem] || 0) + 1 };
       setScannedItems(newScannedItems);
       const newTotal = calculateTotal(newScannedItems);
       setRunningTotal(newTotal);
@@ -60,6 +60,14 @@ const InputVersion = () => {
       setFinalTotal(0);
       setInput('');
     };
+
+    const formatPrice = (price) => {
+        if (price >= 100) {
+          return `£${(price / 100).toFixed(2)}`;
+        } else {
+          return `${price}p`;
+        }
+      };
   
     return (
       <div className="container">
@@ -71,9 +79,9 @@ const InputVersion = () => {
           placeholder="Scan item (A, B, C, D)"
         />
         <button onClick={handleScan}>Scan</button>
-        <h3>Running Total: £{(runningTotal / 100).toFixed(2)}</h3>
+        <h3>Running Total: {formatPrice(runningTotal)}</h3>
         <button onClick={() => setFinalTotal(runningTotal)}>Get Final Total</button>
-        <h2>Final Total: £{(finalTotal / 100).toFixed(2)}</h2>
+        <h2>Final Total: {formatPrice(finalTotal)}</h2>
         <button onClick={resetAll} style={{ marginTop: '10px', backgroundColor: '#dc3545' }}>Reset</button>
       </div>
     );
