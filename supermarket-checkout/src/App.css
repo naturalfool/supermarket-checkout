@@ -29,6 +29,7 @@ body {
 
 .homepage-display h2{
   margin: 0 auto;
+  
 
 }
 
@@ -98,6 +99,62 @@ body {
   margin: 0; 
   font-size: 24px; 
 }
+
+.price-input-form {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.price-input-form h2 {
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.price-input-form .form-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.price-input-form label {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+.price-input-form input[type="number"] {
+  flex: 1;
+  padding: 6px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.price-input-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.price-input-form button:hover {
+  background-color: #45a049;
+}
+
 
 .table-container{
   display: flex; 

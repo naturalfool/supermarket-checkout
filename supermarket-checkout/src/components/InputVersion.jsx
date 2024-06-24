@@ -1,13 +1,7 @@
 import {useState, React} from 'react';
-const pricingRules = {
-    A: { unitPrice: 50, specialPrice: { quantity: 3, price: 130 } },
-    B: { unitPrice: 30, specialPrice: { quantity: 2, price: 45 } },
-    C: { unitPrice: 20 },
-    D: { unitPrice: 15 }
-  };
 
 
-const InputVersion = () => {
+const InputVersion = ({customPricingRules}) => {
     const [scannedItems, setScannedItems] = useState({});
     const [runningTotal, setRunningTotal] = useState(0);
     const [finalTotal, setFinalTotal] = useState(0);
@@ -15,7 +9,7 @@ const InputVersion = () => {
   
     const scanItem = (item) => {
       const upperCaseItem = item.toUpperCase();
-      if (!pricingRules[upperCaseItem]) {
+      if (!customPricingRules[upperCaseItem]) {
         alert(`Item ${upperCaseItem} not found.`);
         return;
       }
@@ -29,7 +23,7 @@ const InputVersion = () => {
       let total = 0;
       for (let item in items) {
         let count = items[item];
-        let rule = pricingRules[item];
+        let rule = customPricingRules[item];
   
         if (rule.specialPrice) {
           let specialCount = Math.floor(count / rule.specialPrice.quantity);
